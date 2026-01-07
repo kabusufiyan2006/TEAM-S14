@@ -4,12 +4,15 @@ slot=0
 while(True):
     print("1.park\n2.status\n3.remove\n4.exit")
     option=int(input("enter your option:"))
+    id=input("ENTER YOUR ID:")
     maplen=len(mpp)
     if(option==1):
         if(maplen==2):
             print("NO SlOTS AVILABLE")
             continue
-        id=input("ENTER YOUR ID:")
+        elif(mpp[id]!=0):
+            print("already booked")
+            continue
         slot+=1
         mpp[id]=slot
         print("Vehicle Parked At Slot:",slot)
