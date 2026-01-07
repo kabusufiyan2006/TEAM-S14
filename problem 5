@@ -1,0 +1,24 @@
+from collections import defaultdict
+mpp=defaultdict(int)
+slot=0
+while(True):
+    print("1.park\n2.status\n3.remove\n4.exit")
+    option=int(input("enter your option:"))
+    maplen=len(mpp)
+    if(option==1):
+        if(maplen==2):
+            print("NO SlOTS AVILABLE")
+            continue
+        id=input("ENTER YOUR ID:")
+        slot+=1
+        mpp[id]=slot
+        print("Vehicle Parked At Slot:",slot)
+    elif(option==2):
+        available=2-maplen
+        print("Available Slots:",available)
+    elif(option==3):
+        id=input("ENTER YOUR ID:")
+        del mpp[id]
+        slot-=1
+    elif(option==4):
+        break
