@@ -4,12 +4,15 @@ room=1
 while(True):
     print("1.Allocate\n2.status\n3.Exit")
     option=int(input("enter your option:"))
+    id=input("ENTER YOUR ID:")
     maplen=len(mpp)
     if(option==1):
-        if(maplen==2):
+        if(mpp[id]!=0):
+            print("already booked")
+            continue
+        elif(maplen==2):
             print("NO ROOMS AVILABLE")
             continue
-        id=input("ENTER YOUR ID:")
         mpp[id]=room
         print("room Allocated to",id,":Room",room)
         room+=1
