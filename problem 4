@@ -1,0 +1,23 @@
+from collections import defaultdict
+mpp=defaultdict(int)
+tot=0
+higestspending=""
+highsp=0
+while(True):
+    print("1.ADD\n2.REPORT\n3.EXIT")
+    option=int(input("enter your option:"))
+    if(option==1):
+        category=input("Enter Your Category:")
+        expense=int(input("Enter Your Expense:"))
+        mpp[category]+=expense
+        tot+=expense
+        if(highsp<expense):
+            higestspending=category
+            highsp=expense
+    elif(option==2):
+        print("Total Expence:",tot)
+        for key,value in mpp.items():
+            print(f"{key}:{value}")
+        print("Higest Spending Category:",higestspending)
+    elif(option==3):
+        break
