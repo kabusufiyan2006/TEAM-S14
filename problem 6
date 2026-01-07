@@ -1,0 +1,24 @@
+from collections import defaultdict
+while(True):
+    mapp=defaultdict(int)
+    temp=input("ENTER A PASSWORD:")
+    mark=0
+    tem=len(temp)
+    if( tem<=8):
+        print("Password Strength:Weak:",temp)
+    for i in temp:
+        if i.isupper():
+            mapp[1]=+1
+        elif i.islower():
+            mapp[2]+=1
+        elif i.isnumeric():
+            mapp[3]+=1
+        else:
+            mapp[4]+=1
+    for i in mapp.values():
+        if(i!=0):
+            mark+=1
+    if(mark==3):
+        print("Password Strength:Medium:",temp)
+    elif(mark>3):
+        print("Password Strength:Strong:",temp)
