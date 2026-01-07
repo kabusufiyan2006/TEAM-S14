@@ -11,10 +11,10 @@ while(True):
         expense=int(input("Enter Your Expense:"))
         mpp[category]+=expense
         tot+=expense
-        if(highsp<expense):
+        if(highsp<expense and category not in higestspending):
             higestspending.append(category)
             highsp=expense
-        elif(highsp==expense):
+        elif(highsp==expense and category not in higestspending):
             higestspending.append(category)
     elif(option==2):
         print("Total Expence:",tot)
